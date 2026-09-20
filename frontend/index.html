@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Aashna Patle — Computer Science & Data Science Student, Developer, Problem Solver." />
+  <meta name="theme-color" content="#F5F0E8" />
+  <title>Aashna Patle</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  
+
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="cursor-dot"  aria-hidden="true"></div>
+  <div id="cursor-ring" aria-hidden="true"></div>
+
+  
+
+  <!-- ═══ NAVBAR ═══════════════════════════════════════════════ -->
+  <nav class="navbar" id="navbar" aria-label="Main navigation">
+    <span class="navbar-logo">AP</span>
+    <ul class="navbar-links" role="list">
+      <li><a href="#hero"         data-section="hero">Home</a></li>
+      <li><a href="#about"        data-section="about">About</a></li>
+      <li><a href="#skills"       data-section="skills">Skills</a></li>
+      <li><a href="#projects"     data-section="projects">Projects</a></li>
+      <li><a href="#achievements" data-section="achievements">Achievements</a></li>
+      <li><a href="#contact"      data-section="contact">Contact</a></li>
+    </ul>
+    <button class="navbar-toggle" id="navbar-toggle"
+            aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+    <button class="mobile-menu-close" id="mobile-menu-close" aria-label="Close menu">&#x2715;</button>
+    <a href="#hero"         class="mobile-nav-link">Home</a>
+    <a href="#about"        class="mobile-nav-link">About</a>
+    <a href="#skills"       class="mobile-nav-link">Skills</a>
+    <a href="#projects"     class="mobile-nav-link">Projects</a>
+    <a href="#achievements" class="mobile-nav-link">Achievements</a>
+    <a href="#contact"      class="mobile-nav-link">Contact</a>
+  </div>
+
+  <!-- ═══ MAIN ══════════════════════════════════════════════════ -->
+  <main id="main-content">
+
+    <!-- ─── HERO ──────────────────────────────────────────────── -->
+    <section id="hero" aria-label="Introduction">
+
+      <!-- Extreme foreground blurred corner shapes -->
+      <div class="hero-corner-sphere left" aria-hidden="true"></div>
+      <div class="hero-corner-sphere right" aria-hidden="true"></div>
+
+      <!-- Orbital metallic background lines -->
+      <svg class="hero-lines" xmlns="http://www.w3.org/2000/svg"
+           viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <defs>
+          <radialGradient id="gold-sphere" cx="30%" cy="30%" r="70%">
+            <stop offset="0%" stop-color="#EBE5D9"/>
+            <stop offset="50%" stop-color="#C9A96E"/>
+            <stop offset="100%" stop-color="#4A2E1A"/>
+          </radialGradient>
+        </defs>
+
+        <!-- Sweeping curves -->
+        <path d="M-100 200 C 300 -50, 700 150, 1100 -100" fill="none" stroke="rgba(201,169,110,0.25)" stroke-width="1.2"/>
+        <path d="M300 950 C 600 700, 1000 900, 1500 500" fill="none" stroke="rgba(201,169,110,0.20)" stroke-width="1.2"/>
+        <path d="M1500 150 C 1100 100, 800 300, 400 450" fill="none" stroke="rgba(201,169,110,0.15)" stroke-width="1.0"/>
+        
+        <!-- 3D Nodes (Spheres) -->
+        <circle cx="380" cy="80" r="6" fill="url(#gold-sphere)" />
+        <circle cx="850" cy="190" r="8" fill="url(#gold-sphere)" />
+        <circle cx="1100" cy="820" r="14" fill="url(#gold-sphere)" />
+        <circle cx="70" cy="180" r="10" fill="url(#gold-sphere)" />
+        <circle cx="250" cy="850" r="5" fill="url(#gold-sphere)" />
+      </svg>
+
+      <!-- Tiny editorial geometric marks (stars/diamonds) -->
+      <svg class="hero-geo" aria-hidden="true"
+           style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;"
+           viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice">
+        <polygon points="1080,260 1084,268 1092,272 1084,276 1080,284 1076,276 1068,272 1076,268" fill="rgba(201,169,110,0.4)"/>
+        <polygon points="1120,410 1122,416 1128,418 1122,420 1120,426 1118,420 1112,418 1118,416" fill="rgba(201,169,110,0.4)"/>
+        <polygon points="380,360 382,366 388,368 382,370 380,376 378,370 372,368 378,366" fill="rgba(201,169,110,0.4)"/>
+        <polygon points="250,800 254,808 262,812 254,816 250,824 246,816 238,812 246,808" fill="rgba(201,169,110,0.4)"/>
+        <circle cx="450" cy="500" r="2" fill="rgba(201,169,110,0.3)"/>
+        <circle cx="1350" cy="210" r="2" fill="rgba(201,169,110,0.3)"/>
+      </svg>
+
+      <!-- Floating tech badges -->
+      <div class="tech-badges-container" aria-hidden="true">
+        <div class="tech-badge" data-badge="python" style="top:22%;left:7%">
+          <span class="tech-badge-dot"></span>PYTHON
+          <span class="tech-badge-icon">py</span>
+        </div>
+        <div class="tech-badge" data-badge="js" style="top:18%;right:9%">
+          <span class="tech-badge-dot"></span>JAVASCRIPT
+          <span class="tech-badge-icon">js</span>
+        </div>
+        <div class="tech-badge" data-badge="cpp" style="top:44%;right:5.5%">
+          <span class="tech-badge-dot"></span>C++
+          <span class="tech-badge-icon">c++</span>
+        </div>
+        <div class="tech-badge" data-badge="sql" style="bottom:31%;right:9%">
+          <span class="tech-badge-dot"></span>SQL
+          <span class="tech-badge-icon">sql</span>
+        </div>
+        <div class="tech-badge" data-badge="fastapi" style="bottom:29%;left:7%">
+          <span class="tech-badge-dot"></span>FASTAPI
+          <span class="tech-badge-icon">fa</span>
+        </div>
+        <div class="tech-badge" data-badge="mongo" style="top:52%;left:5%">
+          <span class="tech-badge-dot"></span>MONGODB
+          <span class="tech-badge-icon">db</span>
+        </div>
+        <div class="tech-badge" data-badge="html" style="top:32%;left:16.5%">
+          <span class="tech-badge-dot"></span>HTML
+          <span class="tech-badge-icon">&lt;/&gt;</span>
+        </div>
+        <div class="tech-badge" data-badge="css" style="top:30%;right:19%">
+          <span class="tech-badge-dot"></span>CSS
+          <span class="tech-badge-icon">#</span>
+        </div>
+        <div class="tech-badge" data-badge="git" style="top:58%;left:15%">
+          <span class="tech-badge-dot"></span>GIT
+          <span class="tech-badge-icon">git</span>
+        </div>
+        <div class="tech-badge" data-badge="github" style="top:58%;right:18%">
+          <span class="tech-badge-dot"></span>GITHUB
+          <span class="tech-badge-icon">gh</span>
+        </div>
+        <div class="tech-badge" data-badge="ds" style="bottom:22%;right:22%">
+          <span class="tech-badge-dot"></span>DATA SCIENCE
+          <span class="tech-badge-icon">ds</span>
+        </div>
+        <div class="tech-badge" data-badge="excel" style="bottom:24%;left:21%">
+          <span class="tech-badge-dot"></span>EXCEL
+          <span class="tech-badge-icon">x</span>
+        </div>
+      </div>
+
+      <!-- Hero content -->
+      <div class="hero-content">
+        <h1 class="hero-name">
+          <span class="hero-name-line">AASHNA</span>
+          <span class="hero-name-line">PATLE</span>
+        </h1>
+        <p class="hero-tagline">BUILDING WITH CODE. CREATING WITH DATA.</p>
+        <p class="hero-sub">Computer Science &amp; Data Science Student &nbsp;&#183;&nbsp; Developer &nbsp;&#183;&nbsp; Problem Solver</p>
+        <div class="hero-actions">
+          <a href="#projects" class="btn-primary">VIEW PROJECTS &rarr;</a>
+          <a href="#" class="btn-secondary" id="resume-btn" target="_blank" rel="noopener noreferrer"
+             aria-label="Download Resume (PDF)">RESUME</a>
+        </div>
+      </div>
+
+      <!-- Subtle scroll indicator - mouse icon -->
+      <div class="hero-scroll-mark" aria-hidden="true">
+        <span class="hero-scroll-label">SCROLL</span>
+        <div class="hero-scroll-mouse">
+          <div class="hero-scroll-wheel"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── ABOUT ─────────────────────────────────────────────── -->
+    <section id="about" aria-label="About Aashna" class="about-section">
+      <div class="about-container reveal">
+        
+        <!-- Header -->
+        <div class="about-header">
+          <div class="about-header-left">
+            <span class="about-num">01 &mdash; ABOUT</span>
+          </div>
+          <div class="about-header-right desktop-only">
+            <span>GET TO KNOW ME</span>
+          </div>
+        </div>
+
+        <!-- Main Content Grid -->
+        <div class="about-grid">
+          
+          <!-- Text Column -->
+          <div class="about-text-col">
+            <h2 class="about-headline">
+              I BUILD WITH CODE.<br>
+              I THINK WITH <span class="text-champagne">DATA.</span>
+            </h2>
+            <div class="about-bio">
+              <p>
+                Hi, I'm Aashna Patle &mdash; a Computer Science and Data Science student
+                who loves turning ideas into real-world solutions. I enjoy building, learning
+                and exploring the intersection of technology, creativity and impact.
+              </p>
+              <p>
+                I'm passionate about developing meaningful projects, solving problems
+                and continuously growing as a developer and a learner.
+              </p>
+            </div>
+            <a href="#contact" class="btn-outline about-btn">MORE ABOUT ME &rarr;</a>
+          </div>
+
+          <!-- Vertical Keywords -->
+          <div class="about-keywords-col desktop-only">
+            <div class="keyword-line"></div>
+            <ul class="keyword-list">
+              <li>LEARN</li>
+              <li>BUILD</li>
+              <li>SOLVE</li>
+              <li>IMPROVE</li>
+              <li>REPEAT</li>
+            </ul>
+          </div>
+
+          <!-- Photo Column -->
+          <div class="about-photo-col" id="about-photo-interactive">
+            
+            <!-- Arch frame -->
+            <div class="about-arch-frame">
+              <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='600'%3E%3Crect width='400' height='600' fill='%233A2516'/%3E%3Ctext x='50%25' y='50%25' font-family='sans-serif' font-size='14' fill='%23C9A96E' text-anchor='middle' dominant-baseline='middle'%3EPHOTO PLACEHOLDER%3C/text%3E%3C/svg%3E" alt="Aashna Patle" loading="lazy" class="about-photo-img" />
+            </div>
+
+            <!-- AP Badge -->
+            <div class="about-ap-badge">AP</div>
+
+            <!-- Orbital SVG decor -->
+            <svg class="about-photo-decor" viewBox="0 0 400 500" aria-hidden="true">
+              <defs>
+                <radialGradient id="about-gold-sphere" cx="30%" cy="30%" r="70%">
+                  <stop offset="0%" stop-color="#EBE5D9"/>
+                  <stop offset="50%" stop-color="#C9A96E"/>
+                  <stop offset="100%" stop-color="#4A2E1A"/>
+                </radialGradient>
+              </defs>
+              <path class="about-orbit" d="M 0 100 C 150 -50, 350 150, 350 400" fill="none" stroke="rgba(201,169,110,0.35)" stroke-width="1.2"/>
+              <path class="about-orbit" d="M 50 400 C 200 500, 400 350, 400 150" fill="none" stroke="rgba(201,169,110,0.2)" stroke-width="1"/>
+              
+              <circle class="about-node" cx="80" cy="250" r="5" fill="url(#about-gold-sphere)"/>
+              <circle class="about-node" cx="310" cy="80" r="4" fill="url(#about-gold-sphere)"/>
+              <circle class="about-node" cx="350" cy="350" r="6" fill="url(#about-gold-sphere)"/>
+            </svg>
+
+            <!-- Small right text -->
+            <div class="about-right-text desktop-only">
+              SAME<br>GIRL<br>BIGGER<br>GOALS<br>
+              <div class="tiny-line"></div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Info Strip -->
+        <div class="about-info-strip">
+          <div class="info-item">
+            <span class="info-icon">&#127891;</span>
+            <div class="info-text">
+              <strong>B.Tech CSE</strong><br>
+              (Data Science)<br>
+              2024 &ndash; 2028
+            </div>
+          </div>
+          <div class="info-divider desktop-only"></div>
+          
+          <div class="info-item">
+            <span class="info-icon">&#128205;</span>
+            <div class="info-text">
+              <strong>Jabalpur</strong><br>
+              Madhya Pradesh
+            </div>
+          </div>
+          <div class="info-divider desktop-only"></div>
+
+          <div class="info-item">
+            <span class="info-icon">&#128187;</span>
+            <div class="info-text">
+              Developer<br>
+              Problem Solver<br>
+              Lifelong Learner
+            </div>
+          </div>
+          <div class="info-divider desktop-only"></div>
+
+          <div class="info-item">
+            <span class="info-icon">&#128202;</span>
+            <div class="info-text">
+              Turning ideas<br>
+              into impact
+            </div>
+          </div>
+          <div class="info-divider signature-divider desktop-only"></div>
+
+          <div class="info-signature desktop-only">
+            aashna patle <span class="sig-line"></span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ─── SKILLS ────────────────────────────────────────────── -->
+    <section id="skills" aria-label="Skills" class="v2-skills-section">
+      <div class="skills-top reveal" style="text-align: left; padding-left: 2rem;">
+        <span class="section-eyebrow">02 &mdash; TOOLKIT</span>
+        <h2 class="section-heading" style="font-size:clamp(2.5rem,5vw,4.2rem); margin-bottom: 2rem;">WHAT I WORK WITH</h2>
+      </div>
+
+      <div class="v2-skills-grid">
+        
+        <!-- Programming -->
+        <div class="v2-skill-card-wrapper reveal" style="--float-delay: 0s; --float-dur: 6.2s; grid-column: 1 / 6;">
+          <div class="v2-skill-card">
+            <div class="v2-skill-card-header">
+              <div class="v2-sc-left">
+                <span class="v2-sc-num">01</span>
+                <span class="v2-sc-title">PROGRAMMING</span>
+              </div>
+              <div class="v2-sc-icon">&lt;/&gt;</div>
+            </div>
+            <div class="v2-skill-pills">
+              <div class="v2-skill-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python"/> Python</div>
+              <div class="v2-skill-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg" alt="C++"/> C++</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Web Dev -->
+        <div class="v2-skill-card-wrapper reveal" style="--float-delay: -2s; --float-dur: 7s; grid-column: 6 / 13;">
+          <div class="v2-skill-card">
+            <div class="v2-skill-card-header">
+              <div class="v2-sc-left">
+                <span class="v2-sc-num">02</span>
+                <span class="v2-sc-title">WEB DEVELOPMENT</span>
+              </div>
+              <div class="v2-sc-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+              </div>
+            </div>
+            <div class="v2-skill-pills">
+              <div class="v2-skill-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt="HTML"/> HTML</div>
+              <div class="v2-skill-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" alt="CSS"/> CSS</div>
+              <div class="v2-skill-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="JavaScript"/> JavaScript</div>
+              <div class="v2-skill-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap"/> Bootstrap</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Data & Database -->
+        <div class="v2-skill-card-wrapper reveal" style="--float-delay: -1s; --float-dur: 6.8s; grid-column: 1 / 13;">
+          <div class="v2-skill-card">
+            <div class="v2-skill-card-header">
+              <div class="v2-sc-left">
+                <span class="v2-sc-num">03</span>
+                <span class="v2-sc-title">DATA & DATABASE</span>
+              </div>
+              <div class="v2-sc-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path></svg>
+              </div>
+            </div>
+            <div class="v2-skill-pills">
+              <div class="v2-skill-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azuresqldatabase/azuresqldatabase-original.svg" alt="SQL"/> SQL</div>
+              <div class="v2-skill-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" alt="MySQL"/> MySQL</div>
+              <div class="v2-skill-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg" alt="MongoDB"/> MongoDB</div>
+              <div class="v2-skill-pill">
+                <svg viewBox="0 0 48 48" width="16" height="16"><path fill="#4CAF50" d="M41,10H25v28h16c0.553,0,1-0.447,1-1V11C42,10.447,41.553,10,41,10z"></path><path fill="#388E3C" d="M32,15H25v4h7V15z M32,22H25v4h7V22z M32,29H25v4h7V29z"></path><path fill="#81C784" d="M39,15h-5v4h5V15z M39,22h-5v4h5V22z M39,29h-5v4h5V29z"></path><path fill="#1B5E20" d="M25,10h-2v28h2V10z"></path><path fill="#4CAF50" d="M24,7L6,11v26l18,4V7z"></path><path fill="#fff" d="M12.247,29.987l2.844-4.887L11.517,18h3.339l2.138,4.354c0.165,0.366,0.297,0.725,0.395,1.077h0.04c0.076-0.297,0.228-0.672,0.457-1.124L20.21,18h3.136l-3.874,6.721l4.08,7.266h-3.359l-2.585-5.184c-0.125-0.264-0.231-0.536-0.316-0.816h-0.04c-0.099,0.293-0.211,0.572-0.336,0.836l-2.678,5.163H12.247z"></path></svg>
+                Excel
+              </div>
+              <div class="v2-skill-pill">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#2196F3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+                Data Science
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Backend -->
+        <div class="v2-skill-card-wrapper reveal" style="--float-delay: -3.5s; --float-dur: 6.5s; grid-column: 1 / 5;">
+          <div class="v2-skill-card">
+            <div class="v2-skill-card-header">
+              <div class="v2-sc-left">
+                <span class="v2-sc-num">04</span>
+                <span class="v2-sc-title">BACKEND</span>
+              </div>
+              <div class="v2-sc-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect><rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect><line x1="6" y1="6" x2="6.01" y2="6"></line><line x1="6" y1="18" x2="6.01" y2="18"></line></svg>
+              </div>
+            </div>
+            <div class="v2-skill-pills">
+              <div class="v2-skill-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/fastapi/fastapi-original.svg" alt="FastAPI"/> FastAPI</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tools -->
+        <div class="v2-skill-card-wrapper reveal" style="--float-delay: -1.5s; --float-dur: 7.2s; grid-column: 5 / 13;">
+          <div class="v2-skill-card">
+            <div class="v2-skill-card-header">
+              <div class="v2-sc-left">
+                <span class="v2-sc-num">05</span>
+                <span class="v2-sc-title">TOOLS</span>
+              </div>
+              <div class="v2-sc-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
+              </div>
+            </div>
+            <div class="v2-skill-pills">
+              <div class="v2-skill-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" alt="Git"/> Git</div>
+              <div class="v2-skill-pill">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+                GitHub
+              </div>
+              <div class="v2-skill-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg" alt="VS Code"/> VS Code</div>
+              <div class="v2-skill-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/anaconda/anaconda-original.svg" alt="Anaconda"/> Anaconda</div>
+              <div class="v2-skill-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jupyter/jupyter-original.svg" alt="Jupyter Notebook"/> Jupyter Notebook</div>
+              <div class="v2-skill-pill">
+                <svg viewBox="0 0 48 48" width="16" height="16"><path fill="#4CAF50" d="M41,10H25v28h16c0.553,0,1-0.447,1-1V11C42,10.447,41.553,10,41,10z"></path><path fill="#388E3C" d="M32,15H25v4h7V15z M32,22H25v4h7V22z M32,29H25v4h7V29z"></path><path fill="#81C784" d="M39,15h-5v4h5V15z M39,22h-5v4h5V22z M39,29h-5v4h5V29z"></path><path fill="#1B5E20" d="M25,10h-2v28h2V10z"></path><path fill="#4CAF50" d="M24,7L6,11v26l18,4V7z"></path><path fill="#fff" d="M12.247,29.987l2.844-4.887L11.517,18h3.339l2.138,4.354c0.165,0.366,0.297,0.725,0.395,1.077h0.04c0.076-0.297,0.228-0.672,0.457-1.124L20.21,18h3.136l-3.874,6.721l4.08,7.266h-3.359l-2.585-5.184c-0.125-0.264-0.231-0.536-0.316-0.816h-0.04c-0.099,0.293-0.211,0.572-0.336,0.836l-2.678,5.163H12.247z"></path></svg>
+                MS Excel
+              </div>
+              <div class="v2-skill-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg" alt="Linux"/> Linux</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+    <!-- ─── PROJECTS ──────────────────────────────────────────── -->
+    <section id="projects" aria-label="Projects" class="v2-projects-section">
+      <div class="projects-top reveal" style="text-align: center; margin-bottom: 4rem;">
+        <span class="section-number" style="display:block; font-size:0.8rem; letter-spacing:0.2em; color:rgba(201,169,110,0.8); margin-bottom:1rem;">03</span>
+        <h2 class="section-heading" style="font-family:var(--font-serif); font-size:clamp(3rem,5vw,4.5rem); letter-spacing:0.02em; color:var(--c-brown);">PROJECTS</h2>
+      </div>
+      <div class="v2-projects-grid" id="projects-list">
+        <!-- Rendered by sections.js from CONFIG -->
+      </div>
+    </section>
+
+    <!-- ─── ACHIEVEMENTS ──────────────────────────────────────── -->
+    <section id="achievements" aria-label="Journey and milestones" class="v2-journey-section">
+      <div class="projects-top reveal" style="text-align: center; margin-bottom: 5rem;">
+        <span class="section-number" style="display:block; font-size:0.8rem; letter-spacing:0.2em; color:rgba(201,169,110,0.8); margin-bottom:1rem;">04</span>
+        <span class="section-eyebrow" style="display:block; font-family:var(--font-sans); font-size:0.85rem; letter-spacing:0.15em; color:rgba(201,169,110,0.8); margin-bottom:0.5rem; text-transform:uppercase;">Journey</span>
+        <h2 class="section-heading" style="font-family:var(--font-serif); font-size:clamp(3rem,5vw,4.5rem); letter-spacing:0.02em; color:var(--c-brown); text-transform:uppercase;">MILESTONES</h2>
+      </div>
+
+      <div class="v2-journey-container" id="v2-journey-container">
+        <!-- Rendered by sections.js -->
+      </div>
+    </section>
+
+    <!-- ─── EXPERIENCE & CERTIFICATIONS ──────────────────────── -->
+        <!-- EXPERIENCE & CERTIFICATIONS -->
+    <section id="experience-certs" aria-label="Experience and certifications" class="v2-credentials-section">
+      
+      <div class="v2-experience-area reveal">
+        <div class="credentials-top" style="margin-bottom: 2rem;">
+          <span class="section-number" style="display:block; font-size:0.8rem; letter-spacing:0.2em; color:rgba(201,169,110,0.8); margin-bottom:0.5rem;">05</span>
+          <h2 class="section-heading" style="font-family:var(--font-serif); font-size:clamp(2rem,4vw,3.5rem); letter-spacing:0.02em; color:var(--c-brown); text-transform:uppercase;">Experience</h2>
+        </div>
+        <div id="experience-list" class="v2-exp-list"></div>
+      </div>
+
+      <div class="v2-certifications-area reveal" style="margin-top: 6rem;">
+        <div class="credentials-top" style="margin-bottom: 3rem;">
+          <h2 class="section-heading" style="font-family:var(--font-serif); font-size:clamp(2.5rem,5vw,4.5rem); letter-spacing:0.02em; color:var(--c-brown); text-transform:uppercase;">Certifications</h2>
+          <span class="section-eyebrow" style="display:block; font-family:var(--font-sans); font-size:0.85rem; letter-spacing:0.15em; color:rgba(201,169,110,0.8); margin-top:1rem; text-transform:uppercase;">My Credentials</span>
+        </div>
+        <div id="certifications-list" class="v2-certs-grid"></div>
+      </div>
+
+    </section>
+
+    <!-- ─── CONTACT ────────────────────────────────────────────── -->
+    <section id="contact" aria-label="Contact">
+      <div class="contact-inner">
+        <div class="contact-left reveal">
+          <span class="section-number" style="color:rgba(201,169,110,0.30);margin-bottom:0.8rem;display:block;">06 &#x2014;</span>
+          <h2 class="contact-statement">LET&#x2019;S BUILD<br/>SOMETHING.</h2>
+          <p class="contact-descriptor">
+            Open to collaborations, internships,<br/>and conversations.
+          </p>
+          <div class="contact-links-list">
+            <!-- Rendered by contact.js from CONFIG -->
+          </div>
+        </div>
+        <div class="contact-right reveal reveal-d2">
+          <form class="contact-form" id="contact-form" novalidate aria-label="Send a message">
+            <div class="form-field">
+              <label for="field-name">Name</label>
+              <input type="text" id="field-name" name="name"
+                     placeholder="Your full name"
+                     autocomplete="name" required aria-required="true" />
+            </div>
+            <div class="form-field">
+              <label for="field-email">Email</label>
+              <input type="email" id="field-email" name="email"
+                     placeholder="your@email.com"
+                     autocomplete="email" required aria-required="true" />
+            </div>
+            <div class="form-field">
+              <label for="field-message">Message</label>
+              <textarea id="field-message" name="message"
+                        placeholder="What would you like to discuss?"
+                        required aria-required="true"></textarea>
+            </div>
+            <button type="submit" class="btn-send" id="btn-send" aria-live="polite">
+              SEND MESSAGE <span aria-hidden="true">&#x2192;</span>
+            </button>
+            <p class="form-status" id="form-status" aria-live="polite" role="status"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ─── FOOTER ────────────────────────────────────────────── -->
+  <footer>
+    <p class="footer-copy">&#xA9; 2024 Aashna Patle. Crafted with intention.</p>
+    <span class="footer-logo">AP</span>
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script src="js/main.js"></script>
+  <script src="js/hero.js"></script>
+  <script src="js/sections.js"></script>
+  <script src="js/contact.js"></script>
+
+</body>
+</html>
