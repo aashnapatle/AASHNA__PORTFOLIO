@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/style.css?v=2.9" />
 </head>
 <body>
 
@@ -30,7 +30,7 @@
       <li><a href="#about"        data-section="about">About</a></li>
       <li><a href="#skills"       data-section="skills">Skills</a></li>
       <li><a href="#projects"     data-section="projects">Projects</a></li>
-      <li><a href="#achievements" data-section="achievements">Achievements</a></li>
+      <li><a href="#achievements" data-section="achievements">Beyond the Code</a></li>
       <li><a href="#contact"      data-section="contact">Contact</a></li>
     </ul>
     <button class="navbar-toggle" id="navbar-toggle"
@@ -45,7 +45,7 @@
     <a href="#about"        class="mobile-nav-link">About</a>
     <a href="#skills"       class="mobile-nav-link">Skills</a>
     <a href="#projects"     class="mobile-nav-link">Projects</a>
-    <a href="#achievements" class="mobile-nav-link">Achievements</a>
+    <a href="#achievements" class="mobile-nav-link">Beyond the Code</a>
     <a href="#contact"      class="mobile-nav-link">Contact</a>
   </div>
 
@@ -196,13 +196,10 @@
             </h2>
             <div class="about-bio">
               <p>
-                Hi, I'm Aashna Patle &mdash; a Computer Science and Data Science student
-                who loves turning ideas into real-world solutions. I enjoy building, learning
-                and exploring the intersection of technology, creativity and impact.
+                Hi, I'm Aashna Patle &mdash; a Computer Science and Data Science student passionate about building meaningful digital experiences, exploring Artificial Intelligence, and transforming data into actionable insights.
               </p>
               <p>
-                I'm passionate about developing meaningful projects, solving problems
-                and continuously growing as a developer and a learner.
+                I enjoy developing applications, experimenting with AI-driven solutions, working with data, and exploring technologies that solve real-world problems. With a blend of development, analytical thinking, and curiosity for emerging technologies, I aim to create practical and impactful solutions while continuously learning and growing.
               </p>
             </div>
             <a href="#contact" class="btn-outline about-btn">MORE ABOUT ME &rarr;</a>
@@ -225,11 +222,8 @@
             
             <!-- Arch frame -->
             <div class="about-arch-frame">
-              <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='600'%3E%3Crect width='400' height='600' fill='%233A2516'/%3E%3Ctext x='50%25' y='50%25' font-family='sans-serif' font-size='14' fill='%23C9A96E' text-anchor='middle' dominant-baseline='middle'%3EPHOTO PLACEHOLDER%3C/text%3E%3C/svg%3E" alt="Aashna Patle" loading="lazy" class="about-photo-img" />
+              <img src="assets/photo.jpg" alt="Aashna Patle" loading="lazy" class="about-photo-img" />
             </div>
-
-            <!-- AP Badge -->
-            <div class="about-ap-badge">AP</div>
 
             <!-- Orbital SVG decor -->
             <svg class="about-photo-decor" viewBox="0 0 400 500" aria-hidden="true">
@@ -248,10 +242,11 @@
               <circle class="about-node" cx="350" cy="350" r="6" fill="url(#about-gold-sphere)"/>
             </svg>
 
-            <!-- Small right text -->
-            <div class="about-right-text desktop-only">
-              SAME<br>GIRL<br>BIGGER<br>GOALS<br>
-              <div class="tiny-line"></div>
+            <!-- Small elegant label beneath photograph -->
+            <div class="about-photo-label" aria-label="Aashna Patle">
+              <span class="photo-label-line" aria-hidden="true"></span>
+              <span class="photo-label-text">Aashna Patle</span>
+              <span class="photo-label-line" aria-hidden="true"></span>
             </div>
 
           </div>
@@ -262,9 +257,9 @@
           <div class="info-item">
             <span class="info-icon">&#127891;</span>
             <div class="info-text">
-              <strong>B.Tech CSE</strong><br>
-              (Data Science)<br>
-              2024 &ndash; 2028
+              <strong>B.Tech CSE (Data Science)</strong><br>
+              <span class="info-institution">Gyan Ganga Institute of Technology and Science</span><br>
+              <span class="info-meta">2024 &ndash; 2028</span>
             </div>
           </div>
           <div class="info-divider desktop-only"></div>
@@ -273,7 +268,7 @@
             <span class="info-icon">&#128205;</span>
             <div class="info-text">
               <strong>Jabalpur</strong><br>
-              Madhya Pradesh
+              <span>Madhya Pradesh</span>
             </div>
           </div>
           <div class="info-divider desktop-only"></div>
@@ -281,24 +276,9 @@
           <div class="info-item">
             <span class="info-icon">&#128187;</span>
             <div class="info-text">
-              Developer<br>
-              Problem Solver<br>
-              Lifelong Learner
+              <strong>Developer</strong><br>
+              <strong>Data Science Engineer</strong>
             </div>
-          </div>
-          <div class="info-divider desktop-only"></div>
-
-          <div class="info-item">
-            <span class="info-icon">&#128202;</span>
-            <div class="info-text">
-              Turning ideas<br>
-              into impact
-            </div>
-          </div>
-          <div class="info-divider signature-divider desktop-only"></div>
-
-          <div class="info-signature desktop-only">
-            aashna patle <span class="sig-line"></span>
           </div>
         </div>
 
@@ -306,128 +286,239 @@
     </section>
 
     <!-- ─── SKILLS ────────────────────────────────────────────── -->
-    <section id="skills" aria-label="Skills" class="v2-skills-section">
-      <div class="skills-top reveal" style="text-align: left; padding-left: 2rem;">
-        <span class="section-eyebrow">02 &mdash; TOOLKIT</span>
-        <h2 class="section-heading" style="font-size:clamp(2.5rem,5vw,4.2rem); margin-bottom: 2rem;">WHAT I WORK WITH</h2>
+    <section id="skills" aria-label="Skills" class="editorial-skills-section">
+      
+      <!-- Top header row -->
+      <div class="editorial-skills-header reveal">
+        <div class="esh-left">
+          <span class="section-eyebrow">02 &mdash; SKILLS</span>
+          <h2 class="section-heading esh-title">WHAT I WORK WITH</h2>
+          <p class="esh-subtitle">
+            A blend of programming, data, and development tools<br />
+            I use to build, learn, and turn ideas into meaningful solutions.
+          </p>
+          <div class="esh-underline"></div>
+        </div>
+        <div class="esh-right desktop-only">
+          <div class="esh-tag-col">
+            <span>TOOLS</span>
+            <span>TECHNOLOGIES</span>
+            <span>I WORK WITH</span>
+          </div>
+          <div class="esh-badge-ring">
+            <div class="esh-badge-dot"></div>
+          </div>
+        </div>
       </div>
 
-      <div class="v2-skills-grid">
+      <!-- Skills clusters container with background golden flow lines -->
+      <div class="editorial-skills-body">
         
-        <!-- Programming -->
-        <div class="v2-skill-card-wrapper reveal" style="--float-delay: 0s; --float-dur: 6.2s; grid-column: 1 / 6;">
-          <div class="v2-skill-card">
-            <div class="v2-skill-card-header">
-              <div class="v2-sc-left">
-                <span class="v2-sc-num">01</span>
-                <span class="v2-sc-title">PROGRAMMING</span>
-              </div>
-              <div class="v2-sc-icon">&lt;/&gt;</div>
-            </div>
-            <div class="v2-skill-pills">
-              <div class="v2-skill-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python"/> Python</div>
-              <div class="v2-skill-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg" alt="C++"/> C++</div>
-            </div>
-          </div>
-        </div>
+        <!-- Connecting curved gold path -->
+        <svg class="editorial-skills-spline desktop-only" viewBox="0 0 1200 680" fill="none" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M 60,320 C 180,240 240,160 380,140 C 520,120 620,100 760,150 C 900,200 840,320 700,340 C 560,360 220,340 180,450 C 140,560 320,580 500,560 C 680,540 820,500 960,570 C 1050,610 1140,540 1200,470" stroke="rgba(201, 169, 110, 0.45)" stroke-width="1.3" />
+          <circle cx="170" cy="275" r="4.5" fill="#C9A96E" />
+          <circle cx="680" cy="175" r="4.5" fill="#C9A96E" />
+          <circle cx="145" cy="450" r="4.5" fill="#C9A96E" />
+          <circle cx="640" cy="540" r="4.5" fill="#C9A96E" />
+          <circle cx="1090" cy="590" r="4.5" fill="#C9A96E" />
+        </svg>
 
-        <!-- Web Dev -->
-        <div class="v2-skill-card-wrapper reveal" style="--float-delay: -2s; --float-dur: 7s; grid-column: 6 / 13;">
-          <div class="v2-skill-card">
-            <div class="v2-skill-card-header">
-              <div class="v2-sc-left">
-                <span class="v2-sc-num">02</span>
-                <span class="v2-sc-title">WEB DEVELOPMENT</span>
-              </div>
-              <div class="v2-sc-icon">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
-              </div>
-            </div>
-            <div class="v2-skill-pills">
-              <div class="v2-skill-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt="HTML"/> HTML</div>
-              <div class="v2-skill-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" alt="CSS"/> CSS</div>
-              <div class="v2-skill-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="JavaScript"/> JavaScript</div>
-              <div class="v2-skill-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap"/> Bootstrap</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Data & Database -->
-        <div class="v2-skill-card-wrapper reveal" style="--float-delay: -1s; --float-dur: 6.8s; grid-column: 1 / 13;">
-          <div class="v2-skill-card">
-            <div class="v2-skill-card-header">
-              <div class="v2-sc-left">
-                <span class="v2-sc-num">03</span>
-                <span class="v2-sc-title">DATA & DATABASE</span>
-              </div>
-              <div class="v2-sc-icon">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path></svg>
+        <div class="editorial-skills-clusters">
+          
+          <!-- 01 PROGRAMMING -->
+          <div class="editorial-cluster cluster-01 reveal">
+            <div class="cluster-header">
+              <div class="cluster-icon-ring">&lt;/&gt;</div>
+              <div class="cluster-header-text">
+                <span class="cluster-num">01</span>
+                <h3 class="cluster-title">PROGRAMMING</h3>
+                <p class="cluster-desc">Languages I use to build logic and solve problems.</p>
               </div>
             </div>
-            <div class="v2-skill-pills">
-              <div class="v2-skill-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azuresqldatabase/azuresqldatabase-original.svg" alt="SQL"/> SQL</div>
-              <div class="v2-skill-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" alt="MySQL"/> MySQL</div>
-              <div class="v2-skill-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg" alt="MongoDB"/> MongoDB</div>
-              <div class="v2-skill-pill">
-                <svg viewBox="0 0 48 48" width="16" height="16"><path fill="#4CAF50" d="M41,10H25v28h16c0.553,0,1-0.447,1-1V11C42,10.447,41.553,10,41,10z"></path><path fill="#388E3C" d="M32,15H25v4h7V15z M32,22H25v4h7V22z M32,29H25v4h7V29z"></path><path fill="#81C784" d="M39,15h-5v4h5V15z M39,22h-5v4h5V22z M39,29h-5v4h5V29z"></path><path fill="#1B5E20" d="M25,10h-2v28h2V10z"></path><path fill="#4CAF50" d="M24,7L6,11v26l18,4V7z"></path><path fill="#fff" d="M12.247,29.987l2.844-4.887L11.517,18h3.339l2.138,4.354c0.165,0.366,0.297,0.725,0.395,1.077h0.04c0.076-0.297,0.228-0.672,0.457-1.124L20.21,18h3.136l-3.874,6.721l4.08,7.266h-3.359l-2.585-5.184c-0.125-0.264-0.231-0.536-0.316-0.816h-0.04c-0.099,0.293-0.211,0.572-0.336,0.836l-2.678,5.163H12.247z"></path></svg>
-                Excel
+            <div class="cluster-items">
+              <div class="skill-item">
+                <div class="skill-circle-badge">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python" />
+                </div>
+                <span class="skill-label">Python</span>
               </div>
-              <div class="v2-skill-pill">
-                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#2196F3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
-                Data Science
+              <div class="skill-item">
+                <div class="skill-circle-badge">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg" alt="C++" />
+                </div>
+                <span class="skill-label">C++</span>
               </div>
             </div>
           </div>
-        </div>
 
-        <!-- Backend -->
-        <div class="v2-skill-card-wrapper reveal" style="--float-delay: -3.5s; --float-dur: 6.5s; grid-column: 1 / 5;">
-          <div class="v2-skill-card">
-            <div class="v2-skill-card-header">
-              <div class="v2-sc-left">
-                <span class="v2-sc-num">04</span>
-                <span class="v2-sc-title">BACKEND</span>
+          <!-- 02 WEB DEVELOPMENT -->
+          <div class="editorial-cluster cluster-02 reveal">
+            <div class="cluster-header">
+              <div class="cluster-icon-ring">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
               </div>
-              <div class="v2-sc-icon">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect><rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect><line x1="6" y1="6" x2="6.01" y2="6"></line><line x1="6" y1="18" x2="6.01" y2="18"></line></svg>
+              <div class="cluster-header-text">
+                <span class="cluster-num">02</span>
+                <h3 class="cluster-title">WEB DEVELOPMENT</h3>
+                <p class="cluster-desc">Technologies I use to build modern and responsive web apps.</p>
               </div>
             </div>
-            <div class="v2-skill-pills">
-              <div class="v2-skill-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/fastapi/fastapi-original.svg" alt="FastAPI"/> FastAPI</div>
+            <div class="cluster-items">
+              <div class="skill-item">
+                <div class="skill-circle-badge">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt="HTML" />
+                </div>
+                <span class="skill-label">HTML</span>
+              </div>
+              <div class="skill-item">
+                <div class="skill-circle-badge">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" alt="CSS" />
+                </div>
+                <span class="skill-label">CSS</span>
+              </div>
+              <div class="skill-item">
+                <div class="skill-circle-badge">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="JavaScript" />
+                </div>
+                <span class="skill-label">JavaScript</span>
+              </div>
+              <div class="skill-item">
+                <div class="skill-circle-badge">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap" />
+                </div>
+                <span class="skill-label">Bootstrap</span>
+              </div>
             </div>
           </div>
-        </div>
 
-        <!-- Tools -->
-        <div class="v2-skill-card-wrapper reveal" style="--float-delay: -1.5s; --float-dur: 7.2s; grid-column: 5 / 13;">
-          <div class="v2-skill-card">
-            <div class="v2-skill-card-header">
-              <div class="v2-sc-left">
-                <span class="v2-sc-num">05</span>
-                <span class="v2-sc-title">TOOLS</span>
+          <!-- 03 DATA & DATABASE -->
+          <div class="editorial-cluster cluster-03 reveal">
+            <div class="cluster-header">
+              <div class="cluster-icon-ring">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path></svg>
               </div>
-              <div class="v2-sc-icon">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
+              <div class="cluster-header-text">
+                <span class="cluster-num">03</span>
+                <h3 class="cluster-title">DATA &amp; DATABASE</h3>
+                <p class="cluster-desc">Tools I use to store, manage and analyse data.</p>
               </div>
             </div>
-            <div class="v2-skill-pills">
-              <div class="v2-skill-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" alt="Git"/> Git</div>
-              <div class="v2-skill-pill">
-                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
-                GitHub
+            <div class="cluster-items">
+              <div class="skill-item">
+                <div class="skill-circle-badge">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azuresqldatabase/azuresqldatabase-original.svg" alt="SQL" />
+                </div>
+                <span class="skill-label">SQL</span>
               </div>
-              <div class="v2-skill-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg" alt="VS Code"/> VS Code</div>
-              <div class="v2-skill-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/anaconda/anaconda-original.svg" alt="Anaconda"/> Anaconda</div>
-              <div class="v2-skill-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jupyter/jupyter-original.svg" alt="Jupyter Notebook"/> Jupyter Notebook</div>
-              <div class="v2-skill-pill">
-                <svg viewBox="0 0 48 48" width="16" height="16"><path fill="#4CAF50" d="M41,10H25v28h16c0.553,0,1-0.447,1-1V11C42,10.447,41.553,10,41,10z"></path><path fill="#388E3C" d="M32,15H25v4h7V15z M32,22H25v4h7V22z M32,29H25v4h7V29z"></path><path fill="#81C784" d="M39,15h-5v4h5V15z M39,22h-5v4h5V22z M39,29h-5v4h5V29z"></path><path fill="#1B5E20" d="M25,10h-2v28h2V10z"></path><path fill="#4CAF50" d="M24,7L6,11v26l18,4V7z"></path><path fill="#fff" d="M12.247,29.987l2.844-4.887L11.517,18h3.339l2.138,4.354c0.165,0.366,0.297,0.725,0.395,1.077h0.04c0.076-0.297,0.228-0.672,0.457-1.124L20.21,18h3.136l-3.874,6.721l4.08,7.266h-3.359l-2.585-5.184c-0.125-0.264-0.231-0.536-0.316-0.816h-0.04c-0.099,0.293-0.211,0.572-0.336,0.836l-2.678,5.163H12.247z"></path></svg>
-                MS Excel
+              <div class="skill-item">
+                <div class="skill-circle-badge">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" alt="MySQL" />
+                </div>
+                <span class="skill-label">MySQL</span>
               </div>
-              <div class="v2-skill-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg" alt="Linux"/> Linux</div>
+              <div class="skill-item">
+                <div class="skill-circle-badge">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg" alt="MongoDB" />
+                </div>
+                <span class="skill-label">MongoDB</span>
+              </div>
+              <div class="skill-item">
+                <div class="skill-circle-badge">
+                  <svg viewBox="0 0 48 48" width="22" height="22"><path fill="#4CAF50" d="M41,10H25v28h16c0.553,0,1-0.447,1-1V11C42,10.447,41.553,10,41,10z"></path><path fill="#388E3C" d="M32,15H25v4h7V15z M32,22H25v4h7V22z M32,29H25v4h7V29z"></path><path fill="#81C784" d="M39,15h-5v4h5V15z M39,22h-5v4h5V22z M39,29h-5v4h5V29z"></path><path fill="#1B5E20" d="M25,10h-2v28h2V10z"></path><path fill="#4CAF50" d="M24,7L6,11v26l18,4V7z"></path><path fill="#fff" d="M12.247,29.987l2.844-4.887L11.517,18h3.339l2.138,4.354c0.165,0.366,0.297,0.725,0.395,1.077h0.04c0.076-0.297,0.228-0.672,0.457-1.124L20.21,18h3.136l-3.874,6.721l4.08,7.266h-3.359l-2.585-5.184c-0.125-0.264-0.231-0.536-0.316-0.816h-0.04c-0.099,0.293-0.211,0.572-0.336,0.836l-2.678,5.163H12.247z"></path></svg>
+                </div>
+                <span class="skill-label">Excel</span>
+              </div>
+              <div class="skill-item">
+                <div class="skill-circle-badge">
+                  <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#2196F3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+                </div>
+                <span class="skill-label">Data Science</span>
+              </div>
             </div>
           </div>
-        </div>
 
+          <!-- 04 BACKEND -->
+          <div class="editorial-cluster cluster-04 reveal">
+            <div class="cluster-header">
+              <div class="cluster-icon-ring">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect><rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect><line x1="6" y1="6" x2="6.01" y2="6"></line><line x1="6" y1="18" x2="6.01" y2="18"></line></svg>
+              </div>
+              <div class="cluster-header-text">
+                <span class="cluster-num">04</span>
+                <h3 class="cluster-title">BACKEND</h3>
+                <p class="cluster-desc">Tools I use to build and connect the backend.</p>
+              </div>
+            </div>
+            <div class="cluster-items">
+              <div class="skill-item">
+                <div class="skill-circle-badge">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/fastapi/fastapi-original.svg" alt="FastAPI" />
+                </div>
+                <span class="skill-label">FastAPI</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 05 TOOLS -->
+          <div class="editorial-cluster cluster-05 reveal">
+            <div class="cluster-header">
+              <div class="cluster-icon-ring">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
+              </div>
+              <div class="cluster-header-text">
+                <span class="cluster-num">05</span>
+                <h3 class="cluster-title">TOOLS</h3>
+                <p class="cluster-desc">Tools that support my development and learning journey.</p>
+              </div>
+            </div>
+            <div class="cluster-items">
+              <div class="skill-item">
+                <div class="skill-circle-badge">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" alt="Git" />
+                </div>
+                <span class="skill-label">Git</span>
+              </div>
+              <div class="skill-item">
+                <div class="skill-circle-badge">
+                  <svg viewBox="0 0 24 24" width="22" height="22" fill="#24292F"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+                </div>
+                <span class="skill-label">GitHub</span>
+              </div>
+              <div class="skill-item">
+                <div class="skill-circle-badge">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg" alt="VS Code" />
+                </div>
+                <span class="skill-label">VS Code</span>
+              </div>
+              <div class="skill-item">
+                <div class="skill-circle-badge">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/anaconda/anaconda-original.svg" alt="Anaconda" />
+                </div>
+                <span class="skill-label">Anaconda</span>
+              </div>
+              <div class="skill-item">
+                <div class="skill-circle-badge">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jupyter/jupyter-original.svg" alt="Jupyter" />
+                </div>
+                <span class="skill-label">Jupyter</span>
+              </div>
+              <div class="skill-item">
+                <div class="skill-circle-badge">
+                  <svg viewBox="0 0 48 48" width="22" height="22"><path fill="#4CAF50" d="M41,10H25v28h16c0.553,0,1-0.447,1-1V11C42,10.447,41.553,10,41,10z"></path><path fill="#388E3C" d="M32,15H25v4h7V15z M32,22H25v4h7V22z M32,29H25v4h7V29z"></path><path fill="#81C784" d="M39,15h-5v4h5V15z M39,22h-5v4h5V22z M39,29h-5v4h5V29z"></path><path fill="#1B5E20" d="M25,10h-2v28h2V10z"></path><path fill="#4CAF50" d="M24,7L6,11v26l18,4V7z"></path><path fill="#fff" d="M12.247,29.987l2.844-4.887L11.517,18h3.339l2.138,4.354c0.165,0.366,0.297,0.725,0.395,1.077h0.04c0.076-0.297,0.228-0.672,0.457-1.124L20.21,18h3.136l-3.874,6.721l4.08,7.266h-3.359l-2.585-5.184c-0.125-0.264-0.231-0.536-0.316-0.816h-0.04c-0.099,0.293-0.211,0.572-0.336,0.836l-2.678,5.163H12.247z"></path></svg>
+                </div>
+                <span class="skill-label">MS Excel</span>
+              </div>
+              <div class="skill-item">
+                <div class="skill-circle-badge">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg" alt="Linux" />
+                </div>
+                <span class="skill-label">Linux</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
       </div>
     </section>
     <!-- ─── PROJECTS ──────────────────────────────────────────── -->
@@ -442,11 +533,10 @@
     </section>
 
     <!-- ─── ACHIEVEMENTS ──────────────────────────────────────── -->
-    <section id="achievements" aria-label="Journey and milestones" class="v2-journey-section">
-      <div class="projects-top reveal" style="text-align: center; margin-bottom: 5rem;">
-        <span class="section-number" style="display:block; font-size:0.8rem; letter-spacing:0.2em; color:rgba(201,169,110,0.8); margin-bottom:1rem;">04</span>
-        <span class="section-eyebrow" style="display:block; font-family:var(--font-sans); font-size:0.85rem; letter-spacing:0.15em; color:rgba(201,169,110,0.8); margin-bottom:0.5rem; text-transform:uppercase;">Journey</span>
-        <h2 class="section-heading" style="font-family:var(--font-serif); font-size:clamp(3rem,5vw,4.5rem); letter-spacing:0.02em; color:var(--c-brown); text-transform:uppercase;">MILESTONES</h2>
+    <section id="achievements" aria-label="Beyond the Code" class="v2-journey-section">
+      <div class="v2-journey-top reveal">
+        <span class="section-number">04</span>
+        <h2 class="section-heading">BEYOND THE CODE</h2>
       </div>
 
       <div class="v2-journey-container" id="v2-journey-container">
@@ -526,11 +616,32 @@
     <span class="footer-logo">AP</span>
   </footer>
 
+  <!-- ═══ CERTIFICATE MODAL ════════════════════════════════════ -->
+  <div id="cert-modal" class="cert-modal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="cert-modal-title">
+    <div class="cert-modal-backdrop" id="cert-modal-backdrop"></div>
+    <div class="cert-modal-container">
+      <div class="cert-modal-header">
+        <div class="cert-modal-header-info">
+          <span class="cert-modal-issuer" id="cert-modal-issuer"></span>
+          <h3 class="cert-modal-title" id="cert-modal-title"></h3>
+          <span class="cert-modal-date" id="cert-modal-date"></span>
+        </div>
+        <button class="cert-modal-close" id="cert-modal-close" aria-label="Close certificate preview">&times;</button>
+      </div>
+      <div class="cert-modal-body" id="cert-modal-body"></div>
+      <div class="cert-modal-footer">
+        <a href="#" id="cert-modal-link" target="_blank" rel="noopener noreferrer" class="v2-btn-solid cert-modal-open-btn">
+          Open Original &nearr;
+        </a>
+      </div>
+    </div>
+  </div>
+
   <!-- Scripts -->
   
   <script src="js/main.js"></script>
   <script src="js/hero.js"></script>
-  <script src="js/sections.js"></script>
+  <script src="js/sections.js?v=2.9"></script>
   <script src="js/contact.js"></script>
 
 </body>

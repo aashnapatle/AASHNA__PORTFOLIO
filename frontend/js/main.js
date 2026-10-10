@@ -135,87 +135,104 @@
     });
   }, { passive: true });
 
-  // 6. PREMIUM CARD HOVER — ISOLATED PER-CARD TILT
-  // Floating animation is on the WRAPPER element.
-  // Transforms here are applied only to the INNER card element.
-  // No card affects any other card.
-  //
-  // Milestone cards (.v2-ms-card) are absolutely positioned, so we
-  // also toggle .is-hovered on their parent .v2-ms-item for the CSS
-  // border/glow rules that need to cascade from parent.
+  // 6. CERTIFICATE PREVIEW MODAL
+  window.openCertModal = function (cert) {
+    const modal = document.getElementById('cert-modal');
+    if (!modal || !cert) return;
 
-  // Skip on touch devices
-  const isTouchDevice = window.matchMedia('(hover: none)').matches;
+    const titleEl  = document.getElementById('cert-modal-title');
+    const issuerEl = document.getElementById('cert-modal-issuer');
+    const dateEl   = document.getElementById('cert-modal-date');
+    const bodyEl   = document.getElementById('cert-modal-body');
+    const linkEl   = document.getElementById('cert-modal-link');
 
-  function attachCardTilt(card) {
-    if (card.dataset.tiltAttached) return;
-    card.dataset.tiltAttached = 'true';
+    if (titleEl)  titleEl.textContent  = cert.title || '';
+    if (issuerEl) issuerEl.textContent = cert.issuer || '';
+    if (dateEl)   dateEl.textContent   = cert.date || '';
 
-    const isMsCard = card.classList.contains('v2-ms-card');
-    const ease = 'transform 0.45s cubic-bezier(0.22, 1, 0.36, 1)';
-
-    card.addEventListener('mouseenter', () => {
-      // Trigger one-time sweep animation by toggling class
-      card.classList.remove('ch-swept');
-      // Force reflow so animation can restart
-      void card.offsetWidth;
-      card.classList.add('ch-swept');
-
-      if (isMsCard) {
-        const msItem = card.closest('.v2-ms-item');
-        if (msItem) msItem.classList.add('is-hovered');
+    const targetDoc = cert.document || cert.file || cert.link || '';
+    if (linkEl) {
+      if (targetDoc && targetDoc !== '#') {
+        linkEl.href = targetDoc;
+        linkEl.style.display = 'inline-flex';
+      } else {
+        linkEl.style.display = 'none';
       }
-    });
+    }
 
-    card.addEventListener('mousemove', (e) => {
-      const rect = card.getBoundingClientRect();
-      // Normalise to -1 … +1
-      const nx = ((e.clientX - rect.left) / rect.width - 0.5) * 2;
-      const ny = ((e.clientY - rect.top) / rect.height - 0.5) * 2;
+    if (bodyEl) {
+      bodyEl.innerHTML = '';
+      const isPdf = typeof targetDoc === 'string' && targetDoc.toLowerCase().endsWith('.pdf');
+      if (isPdf) {
+        const iframe = document.createElement('iframe');
+        iframe.src = targetDoc + '#view=FitH';
+        iframe.className = 'cert-modal-iframe';
+        iframe.title = cert.title || 'Certificate Preview';
+        bodyEl.appendChild(iframe);
+      } else if (targetDoc || cert.thumbnail) {
+        const img = document.createElement('img');
+        img.src = targetDoc || cert.thumbnail;
+        img.alt = cert.title || 'Certificate Preview';
+        img.className = 'cert-modal-img';
+        bodyEl.appendChild(img);
+      }
+    }
 
-      // Max tilt: 1.5deg X, 2deg Y — very subtle
-      const rx = -ny * 1.5;
-      const ry =  nx * 2.0;
+    modal.classList.add('is-active');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
 
-      card.style.transition = 'none';
-      card.style.transform =
-        'perspective(900px) rotateX(' + rx.toFixed(2) + 'deg) rotateY(' + ry.toFixed(2) + 'deg) translateY(-3px) scale(1.01)';
-    });
+    const closeBtn = document.getElementById('cert-modal-close');
+    if (closeBtn) closeBtn.focus();
+  };
 
-    card.addEventListener('mouseleave', () => {
-      card.style.transition = ease;
-      card.style.transform = '';
+  window.closeCertModal = function () {
+    const modal = document.getElementById('cert-modal');
+    if (!modal) return;
+    modal.classList.remove('is-active');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    const bodyEl = document.getElementById('cert-modal-body');
+    if (bodyEl) bodyEl.innerHTML = '';
+  };
 
-      if (isMsCard) {
-        const msItem = card.closest('.v2-ms-item');
-        if (msItem) msItem.classList.remove('is-hovered');
+  function initCertModal() {
+    const modal = document.getElementById('cert-modal');
+    if (!modal) return;
+
+    const closeBtn = document.getElementById('cert-modal-close');
+    const backdrop = document.getElementById('cert-modal-backdrop');
+
+    if (closeBtn) closeBtn.addEventListener('click', window.closeCertModal);
+    if (backdrop) backdrop.addEventListener('click', window.closeCertModal);
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('is-active')) {
+        window.closeCertModal();
       }
     });
   }
 
-  function initCardHover() {
-    if (isTouchDevice) return;
+  // 7. BEYOND THE CODE (MILESTONE) CONNECTOR & NODE HIGHLIGHT
+  function initMilestoneHover() {
+    document.querySelectorAll('.v2-ms-card').forEach((card) => {
+      if (card.dataset.msHoverAttached) return;
+      card.dataset.msHoverAttached = 'true';
+      const item = card.closest('.v2-ms-item');
+      if (!item) return;
 
-    const selectors = [
-      '.v2-skill-card',
-      '.v2-project-card',
-      '.v2-ms-card',
-      '.v2-exp-card',
-      '.v2-cert-card'
-    ];
-
-    selectors.forEach(sel => {
-      document.querySelectorAll(sel).forEach(card => attachCardTilt(card));
+      card.addEventListener('mouseenter', () => item.classList.add('is-hovered'));
+      card.addEventListener('mouseleave', () => item.classList.remove('is-hovered'));
     });
   }
 
-  // Attach now (for statically rendered cards like skills)
-  document.addEventListener('DOMContentLoaded', initCardHover);
-  initCardHover();
+  document.addEventListener('DOMContentLoaded', () => {
+    initCertModal();
+    initMilestoneHover();
+  });
 
-  // Re-attach after sections.js renders dynamic cards
   window.addEventListener('sectionsRendered', () => {
-    setTimeout(initCardHover, 150);
+    setTimeout(initMilestoneHover, 100);
   });
 
 })();
