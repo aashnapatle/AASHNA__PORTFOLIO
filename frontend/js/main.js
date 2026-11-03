@@ -67,27 +67,44 @@
   const menuToggle = document.querySelector('.navbar-toggle');
   const mobileMenu = document.querySelector('.mobile-menu');
   const menuClose = document.querySelector('.mobile-menu-close');
-  const mobileLinks = document.querySelectorAll('.mobile-menu .nav-link');
+  const mobileLinks = document.querySelectorAll('.mobile-menu a, .mobile-nav-link');
+
+  function openMobileMenu() {
+    if (!mobileMenu) return;
+    mobileMenu.classList.add('open');
+    if (menuToggle) menuToggle.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeMobileMenu() {
+    if (!mobileMenu) return;
+    mobileMenu.classList.remove('open');
+    if (menuToggle) menuToggle.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  }
 
   if (menuToggle && mobileMenu) {
     menuToggle.addEventListener('click', () => {
-      mobileMenu.classList.add('open');
-      document.body.style.overflow = 'hidden';
+      if (mobileMenu.classList.contains('open')) {
+        closeMobileMenu();
+      } else {
+        openMobileMenu();
+      }
     });
   }
   
   if (menuClose && mobileMenu) {
-    menuClose.addEventListener('click', () => {
-      mobileMenu.classList.remove('open');
-      document.body.style.overflow = '';
-    });
+    menuClose.addEventListener('click', closeMobileMenu);
   }
   
   mobileLinks.forEach(link => {
-    link.addEventListener('click', () => {
-      if (mobileMenu) mobileMenu.classList.remove('open');
-      document.body.style.overflow = '';
-    });
+    link.addEventListener('click', closeMobileMenu);
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && mobileMenu && mobileMenu.classList.contains('open')) {
+      closeMobileMenu();
+    }
   });
 
   // 4. SCROLL REVEAL
@@ -115,7 +132,7 @@
 
   // 5. ACTIVE NAV LINK HIGHLIGHTING
   const sections = document.querySelectorAll('section[id]');
-  const navLinks = document.querySelectorAll('.navbar-links .nav-link');
+  const navLinks = document.querySelectorAll('.navbar-links a');
 
   window.addEventListener('scroll', () => {
     let current = '';
