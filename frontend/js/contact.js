@@ -1,19 +1,29 @@
-﻿/* ================================================================
-   contact.js — Contact links + form validation + POST /api/contact
+/* ================================================================
+   contact.js — Contact links + form validation + Formspree POST
    ================================================================ */
 
 (function () {
   'use strict';
 
-  // Wait for CONFIG to be available (sections.js must load first)
-  window.addEventListener('sectionsRendered', init);
+  const FORMSPREE_URL = 'https://formspree.io/f/xoeennev';
 
-  function init() {
+  // sections.js dispatches 'sectionsRendered' synchronously while the page
+  // loads — before contact.js is even parsed (contact.js loads after it).
+  // By the time we reach this code the event has already fired, so listening
+  // for it here misses it every time.  The form HTML is static in index.html
+  // (not injected by sections.js), so DOMContentLoaded is all we need, with
+  // a small fallback in case the DOM is already ready when this script runs.
+  function bootstrap() {
     const C = window.PORTFOLIO_CONFIG;
-    if (!C) return;
+    if (C) renderContactLinks(C);
+    initForm();
+  }
 
-    renderContactLinks(C);
-    initForm(C);
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', bootstrap);
+  } else {
+    // DOM already parsed — run immediately
+    bootstrap();
   }
 
   // ── CONTACT LINKS ──────────────────────────────────────────────
@@ -43,18 +53,20 @@
   }
 
   // ── FORM ───────────────────────────────────────────────────────
-  // API base URL — change to deployed URL in production
-  const API_BASE = 'http://127.0.0.1:8000';
-
-  function initForm(C) {
-    const form      = document.getElementById('contact-form');
-    const btn       = document.getElementById('btn-send');
-    const statusEl  = document.getElementById('form-status');
+  function initForm() {
+    const form     = document.getElementById('contact-form');
+    const btn      = document.getElementById('btn-send');
+    const statusEl = document.getElementById('form-status');
 
     if (!form || !btn || !statusEl) return;
 
+    let submitting = false;
+
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
+
+      // Prevent duplicate submissions
+      if (submitting) return;
 
       const name    = form.elements['name'].value.trim();
       const email   = form.elements['email'].value.trim();
@@ -76,30 +88,36 @@
         return;
       }
 
-      // Send
+      // Loading state
+      submitting = true;
       btn.disabled = true;
-      btn.textContent = 'SENDING...';
+      btn.innerHTML = '<span class="btn-spinner" aria-hidden="true"></span>SENDING\u2026';
       showStatus('', '');
 
       try {
-        const res = await fetch(API_BASE + '/api/contact', {
+        const res = await fetch(FORMSPREE_URL, {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
+          },
           body: JSON.stringify({ name, email, message }),
         });
 
         if (res.ok) {
-          const data = await res.json();
-          showStatus('Message sent. I will get back to you soon.', 'success');
+          showStatus('Thank you! Your message has been sent successfully.', 'success');
           form.reset();
         } else {
-          const err = await res.json().catch(() => ({}));
-          showStatus(err.detail || 'Something went wrong. Please try again.', 'error');
+          const data = await res.json().catch(() => ({}));
+          const errMsg = (data.errors && data.errors.map(e => e.message).join(' ')) ||
+                         'Something went wrong. Please try again.';
+          showStatus(errMsg, 'error');
         }
       } catch (err) {
-        showStatus('Could not reach the server. Please email directly.', 'error');
+        showStatus('Could not send your message. Please try again or email directly.', 'error');
         console.error('[Contact form]', err);
       } finally {
+        submitting = false;
         btn.disabled = false;
         btn.innerHTML = 'SEND MESSAGE <span aria-hidden="true">&#x2192;</span>';
       }
